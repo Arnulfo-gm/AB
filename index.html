@@ -1,1 +1,233 @@
-<h1>Hola Prueba Page</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="GrupoAB" content="width=device-width, initial-scale=1.0" />
+    <title>GrupoAB</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <script src="JS/modales.js" defer></script>
+    <script src="JS/mapa.js" defer></script>  
+    <script src="JS/slider.js" defer></script>
+    <script src="JS/mapa-mex.js" defer></script>
+
+    
+  </head>
+  <body class="container-all">
+    <!-- Header -->
+    <header>
+      <nav id="navbar">
+        <!-- Logo -->
+        <div class="logo-ini">
+          <a onclick="loadPage('home/home.html')">
+            <img src="imganes/GRUPO AB.png" alt="Logo" />
+          </a>
+        </div>
+        <!-- Corporativo -->
+        <div class="dropdown" id="corporativo-dropdown">
+          <button class="btn" onclick="toggleSubMenu('corporativo-submenu')">
+            Corporativo
+          </button>
+          <div id="corporativo-submenu" class="submenu">
+            <button
+              class="btn sub-btn"
+              onclick="loadPage('corporativo/somos.html')"
+            >
+              Quienes Somos
+            </button>
+            <button
+              class="btn sub-btn"
+              onclick="loadPage('corporativo/oficina.html')"
+            >
+              Oficina
+            </button>
+            <button class="btn sub-btn" onclick="openModal()">Contacto</button>
+          </div>
+        </div>
+        <!-- Descuento -->
+        <div class="dropdown" id="descuento-dropdown">
+          <button class="btn" onclick="toggleSubMenu('descuento-submenu')">
+            Descuento por nómina
+          </button>
+          <div id="descuento-submenu" class="submenu">
+            <button
+              class="btn sub-btn"
+              onclick="loadPage('descuento/induccion.html')"
+            >
+              Inducción
+            </button>
+            <button
+              class="btn sub-btn"
+              onclick="loadPage('descuento/nomina.html')"
+            >
+              Descuento Vía Nómina
+            </button>
+          </div>
+        </div>
+        <!-- Seguros -->
+        <div class="dropdown" id="seguros-dropdown">
+          <button class="btn" onclick="toggleSubMenu('seguros-submenu')">
+            Seguros Tradicionales
+          </button>
+          <div id="seguros-submenu" class="submenu">
+            <button class="btn sub-btn" onclick="loadPage('seguros/vida.html')">
+              Vida
+            </button>
+            <button
+              class="btn sub-btn"
+              onclick="loadPage('seguros/medico.html')"
+            >
+              Médico
+            </button>
+            <button
+              class="btn sub-btn"
+              onclick="loadPage('seguros/accidentes.html')"
+            >
+              Accidentes Personales
+            </button>
+          </div>
+        </div>
+        <!-- Centro -->
+        <div class="dropdown" id="centro-dropdown">
+          <button class="btn" onclick="toggleSubMenu('centro-submenu')">
+            Centro de Capacitación
+          </button>
+          <div id="centro-submenu" class="submenu">
+            <button
+              class="btn sub-btn"
+              onclick="loadPage('centro/capacitacion.html')"
+            >
+              Capacitación
+            </button>
+          </div>
+        </div>
+        <!-- Fuerza -->
+        <div class="dropdown" id="fuerza-dropdown">
+          <button class="btn" onclick="toggleSubMenu('fuerza-submenu')">
+            Fuerza de ventas
+          </button>
+          <div id="fuerza-submenu" class="submenu">
+            <button
+              class="btn sub-btn"
+              onclick="loadPage('fuerza/fuerza.html')"
+            >
+              Fuerza de ventas
+            </button>
+          </div>
+        </div>
+        <!-- Sucursales -->
+        <div class="dropdown" id="sucursales-dropdown">
+          <button class="btn" onclick="toggleSubMenu('sucursales-submenu')">
+            Sucursales
+          </button>
+          <div id="sucursales-submenu" class="submenu">
+            <button
+              class="btn sub-btn"
+              onclick="loadPage('sucursales/sucursales.html')"
+            >
+              Sucursales
+            </button>
+          </div>
+        </div>
+                <!-- Pruebas -->
+        <div class="dropdown" id="pruebas-dropdown">
+          <button class="btn" onclick="toggleSubMenu('pruebas-submenu')">
+            pruebas
+          </button>
+          <div id="pruebas-submenu" class="submenu">
+            <button
+              class="btn sub-btn"
+              onclick="loadPage('pruebas/pruebas.html')"
+            >
+            pruebas
+            </button>
+          </div>
+        </div>
+        <div id="modal-container"></div>
+      </nav>
+    </header>
+
+    <!-- Main content -->
+    <main>
+      <!-- <div class="carousel">
+        <div class="carousel-track">
+          <div class="carousel-slide"><img src="imganes/prueba1.jpg" alt="1"></div>
+          <div class="carousel-slide"><img src="imganes/prueba2.jpg" alt="2"></div>
+          <div class="carousel-slide"><img src="imganes/prueba3.jpg" alt="3"></div>
+          <div class="carousel-slide"><img src="imganes/prueba1.jpg" alt="4"></div>
+          <div class="carousel-slide"><img src="imganes/prueba2.jpg" alt="5"></div>
+        </div>
+      </div> -->
+      <div id="content" class="container"></div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="pie-pagina">
+      <div class="pie1">
+        <div class="box">
+          <figure>
+              <img src="imganes/GRUPO AB.png" alt="Logo" />
+            </a>
+          </figure>
+        </div>
+        <div class="box">
+          <h1>Datos generales</h1>
+          <p>Dirección</p>
+          <p>Teléfono</p>
+        </div>
+        <div class="box">
+          <h1>Síguenos</h1>
+          <div class="redes-sociales">
+            <ul class="wrapper">
+              <li class="icon facebook">
+                <span class="tooltip">Facebook</span>
+                <span><i class="fab fa-facebook-f"></i></span>
+              </li>
+              <li class="icon instagram">
+                <span class="tooltip">Instagram</span>
+                <span><i class="fab fa-instagram"></i></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <footer class="pie-pagina">
+        <div class="negritas">
+          <small>&copy; 2024 GrupoAB - Todos los derechos reservados</small>
+        </div>
+      </footer>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+      function loadPage(url) {
+        fetch(url)
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("content").innerHTML = data;
+      
+            if (url !== "inicio.html" && document.querySelector(".slider-container")) {
+              document.querySelector(".slider-container").style.display = "none";
+            } else if (url === "inicio.html" && document.querySelector(".slider-container")) {
+              document.querySelector(".slider-container").style.display = "block";
+            }
+          })
+          .catch((error) => console.error("Error loading page:", error));
+      }
+
+      function toggleSubMenu(id) {
+        const submenu = document.getElementById(id);
+        submenu.style.display =
+          submenu.style.display === "none" || submenu.style.display === ""
+            ? "block"
+            : "none";
+      }
+
+      
+    </script>
+  </body>
+</html>
