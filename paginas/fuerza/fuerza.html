@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Corporativo</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .form-container {
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .form-title {
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <!-- Banner -->
+  <div class="container">
+    <img class="img-fluid mt-3 rounded" src="img/Campaña Reclutamiento/banner vertical te estamos buscando9.jpg" alt="Te estamos buscando banner vertical" />
+  </div>
+
+  <!-- Formulario -->
+  <div class="form-container">
+    <h1 class="form-title">Formulario de Reclutamiento</h1>
+    <form>
+      <div class="mb-3">
+        <label for="inputNombre" class="form-label">Nombre:</label>
+        <input type="text" class="form-control" id="inputNombre" placeholder="Ingrese su nombre" required pattern="[A-Za-z0-9ÁÉÍÓÚáéíóú /.-]+" />
+      </div>
+      <div class="mb-3">
+        <label for="inputEmail" class="form-label">Email:</label>
+        <input type="email" class="form-control" id="inputEmail" placeholder="Ingrese su email" required />
+      </div>
+      <div class="mb-3">
+        <label for="inputCelular" class="form-label">Celular:</label>
+        <input type="tel" class="form-control" id="inputCelular" placeholder="Ingrese su celular" required pattern="[0-9]{10}" />
+      </div>
+      <div class="mb-3">
+        <label for="selectEscolaridad" class="form-label">Escolaridad:</label>
+        <select class="form-select" id="selectEscolaridad">
+          <option value="Preparatoria">Preparatoria</option>
+          <option value="Licenciatura">Licenciatura</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="selectGenero" class="form-label">Género:</label>
+        <select class="form-select" id="selectGenero">
+          <option value="Masculino">Masculino</option>
+          <option value="Femenino">Femenino</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="inputEdad" class="form-label">Edad:</label>
+        <input type="number" class="form-control" id="inputEdad" placeholder="Ingrese su edad" required min="18" />
+      </div>
+      <div class="mb-3">
+        <label for="inputMensaje" class="form-label">Mensaje:</label>
+        <input type="text" class="form-control" id="inputMensaje" placeholder="Mensaje..." required />
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Enviar</button>
+    </form>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
